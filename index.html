@@ -1,0 +1,86 @@
+
+<html>
+  <head>
+      <style type='text/css'>
+        .home-pop-main-div
+        {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              min-height: 100vh;
+              position:fixed;
+              z-index:99999999;
+              width: 100%;
+              background:#0000007a;
+              top: 0;
+        }
+        .home-pop
+        {
+            max-width: 400px;
+            min-width: 400px;
+            background: white;
+            border: 1px solid gray;
+            padding: 30px 15px;
+            top: 20%;
+            position: absolute;
+            overflow: hidden;
+        }
+        
+        .home-pop-hide
+        {
+            display:none;
+        }
+        .home-pop .title
+        {
+            color:#4cae35;
+            font-weight:bold;
+        }
+        .home-pop .close
+        {
+            position:absolute;
+            right:7px;
+            top:7px;
+            font-size:17px;
+            cursor: pointer;
+            opacity: 0.7;
+            
+        }
+       
+      </style>
+      <script src="https://pcbmagic.com/assets/cdn/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="home-pop-main-div">
+        <div class="home-pop">
+            <p class="close" id="close-home-pop">X</p>
+            <h4 class="title">POP TITLE HERE</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <script> 
+        
+
+
+        $('#close-home-pop').click(function(){
+        
+          $('.home-pop-main-div').hide();
+          localStorage.setItem('myPopup','true');
+          
+        }); 
+      
+      var popcheck = localStorage.getItem('myPopup');
+      if(!popcheck){
+          function  PopUp(){
+              $('.home-pop-main-div').show();
+          }
+          PopUp();
+          
+      }else
+      {
+        $('.home-pop-main-div').hide();
+      }
+        
+      </script>
+    </div>
+  </body>
+  </html>
